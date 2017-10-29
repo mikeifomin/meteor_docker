@@ -38,16 +38,17 @@ WORKDIR /home/meteor
 ENV RELEASE=1.6
 RUN curl "https://install.meteor.com/?release=${RELEASE}" | sh
 
-COPY app /home/tmp_app
-WORKDIR /home/tmp_app
+COPY app /home/meteor/tmp_app
+WORKDIR /home/meteor/tmp_app
 
 USER root
-RUN chmod -R 777 /home/tmp_app
+RUN chmod -R 777 /home/meteor/tmp_app
 USER meteor
 # just for cache
 RUN meteor npm i
-RUN meteor build ../
+RUN meteor build --directory /home/meteor/tmp_app_bundle
 
-RUN rm -rf /home/tmp_app
+RUN rm -rf /home/meteor/tmp_app
+RUN rm -rf /home/meteor/tmp_app_bundle
 
 WORKDIR /home/meteor
