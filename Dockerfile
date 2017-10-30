@@ -35,7 +35,7 @@ USER meteor
 
 WORKDIR /home/meteor
 
-ENV RELEASE=1.6
+ENV RELEASE=1.5.2.2
 RUN curl "https://install.meteor.com/?release=${RELEASE}" | sh
 
 COPY app /home/meteor/tmp_app
