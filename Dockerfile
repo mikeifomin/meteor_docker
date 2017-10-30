@@ -1,4 +1,4 @@
-FROM 4.8.5-stretch
+FROM node:4.8.5-stretch
 
 #ENV HTTP_PROXY=docker.for.mac.localhost:3128
 #ENV http_proxy=http://docker.for.mac.localhost:3128
