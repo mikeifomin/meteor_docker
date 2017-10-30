@@ -1,4 +1,4 @@
-FROM debian:stretch
+FROM node:8
 
 #ENV HTTP_PROXY=docker.for.mac.localhost:3128
 #ENV http_proxy=http://docker.for.mac.localhost:3128
