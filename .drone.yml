@@ -1,0 +1,11 @@
+pipeline:
+  docker_build:
+    image: plugins/docker
+    #repo: r.mif.io/marflo/server
+    repo: mikeifomin/docker_build_proxy
+    #registry: r.mif.io
+    force_tag: true
+    tags:
+      #- ${DRONE_TAG}
+      #- ${DRONE_COMMIT_SHA:0:8}
+      - latest
